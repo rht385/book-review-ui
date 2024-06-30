@@ -4,8 +4,8 @@
 
 1. Clone the repository:
     ```sh
-    git clone git@github.com:rht385/book-review-app.git
-    cd book-review-app
+    git clone git@github.com:rht385/book-review-ui.git
+    cd book-review-ui
     ```
 
 2. Install dependencies:
