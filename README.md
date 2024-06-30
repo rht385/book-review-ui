@@ -1,5 +1,3 @@
-# Book Reviews API
-
 ## Setup Instructions
 
 1. Clone the repository:
