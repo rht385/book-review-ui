@@ -1,0 +1,186 @@
+.books-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 15px;
+  padding: 20px;
+}
+
+.book-view {
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.2s;
+  max-width: 330px;
+}
+
+.book-view:hover {
+  transform: scale(1.05);
+}
+
+.review-title {
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+.review-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px 20px;
+}
+
+.review-comments {
+  padding: 10px;
+}
+
+.rating-comment {
+  margin: 5px;
+}
+
+.rating-comment span {
+  display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
+.review-comments p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.single-book-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-container {
+    display: flex;
+}
+
+.img-wrap {
+    width: 95%;
+    padding: 20px;
+}
+
+.book-wrapper {
+    display: flex;
+    padding: 0 10px;
+    flex-direction: column;
+}
+
+.add-review-btn {
+    height: 40px;
+    width: 125px;
+    background-color: #2bff00;
+    border-radius: 10px;
+    border: 1px solid gold;
+}
+
+.text-area {
+    height: 100px;
+    width: 100%;
+}
+
+.submit-btn {
+    background-color: #2bff00;
+    margin: 2px;
+    border: 1px solid blue;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+/* .login {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+/* body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -50%);
+}
+
+.login h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.flip-form {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    cursor: pointer;
+    gap: 10px;
+}
