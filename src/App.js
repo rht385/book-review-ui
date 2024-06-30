@@ -8,8 +8,6 @@ import Register from './components/Register';
 import { isAuthenticated } from './components/Login';
 
 function App() {
-
-  console.log(isAuthenticated, "isAuth")
   return (
     <Router>
       <Routes>

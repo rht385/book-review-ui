@@ -7,6 +7,7 @@ import useDebounce from "../hooks/Debounce";
 import userImage from "../seller-empty.svg";
 
 function Home() {
+  const isMobileScreen = window.innerWidth <= 400;
   const navigate = useNavigate();
   const [books, setBooks] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -38,7 +39,7 @@ function Home() {
         book.author
           ?.toLowerCase()
           ?.includes(debouncedSearchQuery?.toLowerCase()) ||
-        book?.publishedYear?.includes(debouncedSearchQuery)
+        book.publishedYear?.toString()?.includes(debouncedSearchQuery)
     );
     setFilteredBooks(filteredBooks);
   }, [debouncedSearchQuery, books]);
@@ -47,9 +48,46 @@ function Home() {
 
   return (
     <div>
-      <div className="top-container">
-        <h1>Book List</h1>
-        <div className="profile" onClick={() => handleOpen()}>
+      {!isMobileScreen ? (
+        <div className="top-container">
+          <h1>Book List</h1>
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search by title, author, or publish year"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <div className="profile-container">
+            <div className="profile" onClick={handleOpen}>
+              <img src={profile} alt="Profile" width="40px" height="40px" />
+            </div>
+            {open && (
+              <div className="popup">
+                <div className="popup-content">
+                  <button onClick={clearLocalStorage}>Logout</button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      ) : (
+        <div className="top-container">
+          <div className="for-mobile">
+            <h1>Book List</h1>
+            <div className="profile-container">
+              <div className="profile" onClick={handleOpen}>
+                <img src={profile} alt="Profile" width="40px" height="40px" />
+              </div>
+              {open && (
+                <div className="popup">
+                  <div className="popup-content">
+                    <button onClick={clearLocalStorage}>Logout</button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
           <input
             className="search-input"
             type="text"
@@ -57,10 +95,8 @@ function Home() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <img src={profile} alt="" width="40px" height="40px" />
-          {open && <div onClick={() => clearLocalStorage()}>Logout</div>}
         </div>
-      </div>
+      )}
 
       <div className="books-container">
         {filteredBooks.map((book) => (

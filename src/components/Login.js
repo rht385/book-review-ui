@@ -6,7 +6,6 @@ import Register from "./Register";
 
 export const isAuthenticated = () => {
   const token = localStorage.getItem("token");
-  console.log(token, "token");
   if (!token) return false;
 
   try {
